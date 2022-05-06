@@ -6,20 +6,25 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 09:24:44 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/06 09:42:35 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/06 23:35:49 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t			i;
 	unsigned char	*d;
+	unsigned char	*s;
 
 	i = 0;
 	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
 	while (i < n)
-		d[i] = (unsigned char *)src[i++];
+	{
+		d[i] = s[i];
+		i++;
+	}
 	return (d);
 }

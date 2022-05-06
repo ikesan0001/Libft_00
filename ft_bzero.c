@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 09:14:11 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/06 09:40:57 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/06 23:20:15 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*S;
 
 	i = 0;
+	S = (unsigned char *)s;
 	while (i < n)
 		S[i++] = '\0';
-	return (0);
+	return ;
 }
