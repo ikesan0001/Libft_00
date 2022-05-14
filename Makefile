@@ -6,7 +6,7 @@
 #    By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 12:30:14 by iryoga            #+#    #+#              #
-#    Updated: 2022/05/07 18:32:51 by iryoga           ###   ########.fr        #
+#    Updated: 2022/05/15 00:33:28 by iryoga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,40 +54,20 @@ SRCS = ft_isalpha.c \
 
 OBJS = $(SRCS:.c=.o)
 
-RM				= /bin/rm -f
+RM = rm -f
 
-
-
-.PHONY: all clean fclean re bonus
-
-
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
-
-
 $(NAME): $(OBJS)
-
 	ar rcs $(NAME) $(OBJS)
 
-
-.c.o:
-
-	$(CC) $(CFLAGS) -o $@ -c $*.c
-
-
-
 clean:
-
 	$(RM) $(OBJS)
 
-
-
 fclean:clean
-
-	$(RM) -f $(NAME)
-
-
+	$(RM) $(NAME)
 
 re:fclean all
 
