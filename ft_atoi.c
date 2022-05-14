@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:02:13 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/12 21:53:09 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/14 23:25:15 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,24 @@
 
 int	ft_atoi(const char *str)
 {
-	int i;
+	char	*s;
+	long	i;
+	int		j;
 
 	i = 0;
-	ft_strlen(str);
-	return (i);
+	j = 0;
+	s = (char *)str;
+	while (s[0] == '\t' || s[0] == '\n' || s[0] == '\v' || \
+s[0] == '\f' || s[0] == '\r' || s[0] == ' ')
+		s++;
+	if (s[j] == '+' || s[j] == '-')
+		j++;
+	while (ft_isdigit(s[j]) != 0)
+	{
+		i = i * 10 + ((long)s[j] - 48);
+		j++;
+	}
+	if (s[0] == '-')
+		 i *= -1;
+	return ((int)i);
 }
